@@ -12,6 +12,7 @@
 :root{
     --bg-color: rgb(56, 52, 52);
     --text-color: white;
+    --main-color: rgb(255, 102, 0);
 }
 
 body{
@@ -25,9 +26,20 @@ header {
   width: 100%;
   top: 0;
   right: 0;
-  justify-content: space-between;
+  justify-content: space-around;
   border-bottom: 1px solid transparent;
   background: transparent;
+  z-index: 1000;
+  transition: all .45s ease;
+  padding: 22px 15%;
+  align-items: center;
+  caret-color: transparent;
+}
+
+header.sticky {
+    background: var(--bg-color);
+    border-bottom: 1px solid gray;
+    padding: 12px 15%;
 }
 
 .navbar{
@@ -39,22 +51,77 @@ header {
     font-size: 17px;
     font-weight: bold;
     margin: 0 25px;
+    transition: all .45s ease;
 }
 
 
 section{
-    padding: 160px;
+    padding: 160px 15% 100px;
 }
 
+.navbar a:hover{
+	color: var(--main-color);
+}
+.navbar .active{
+	color: var(--main-color);
+}
+
+#menu-icon{
+	font-size: 35px;
+	color: var(--text-color);
+	z-index: 10001;
+	cursor: pointer;
+	margin-left: 25px;
+	display: none;
+}
 
 @media (max-width: 1480px){
     header{
         padding: 12px 2.5%;
-        transition: .1s;
+        transition: .5s;
     }
 
     header.sticky{
         padding: 10px 2.5%;
         transition: .1s;
     }
+
+    section{
+        padding: 110px 3% 60px;
+    }
+}
+
+@media (max-width: 840px){
+	#menu-icon{
+		display: block;
+	}
+
+    .navbar{
+        position: absolute;
+        top: -1000px;
+        right: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        text-align: left;
+        transition: all .45s ease;
+    }
+
+    .navbar a{
+        display: block;
+        margin: 17px;
+        font-size: 20px;
+        transition: all .45 ease;
+        color: var(--text-color);
+    }
+    .navbar a:hover{
+		color: var(--main-color);
+	}
+	.navbar .active{
+		color: var(--text-color);
+	}
+	.navbar.open{
+		top: 100%;
+	}
 }
