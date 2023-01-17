@@ -13,11 +13,16 @@
     --bg-color: rgb(56, 52, 52);
     --text-color: white;
     --main-color: rgb(255, 102, 0);
+    --second-bg-color: rgb(41, 39, 39);
+    --big-font: 5rem;
+	--h2-font: 3rem;
+	--p-font: 1.1rem;
 }
 
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
+    
 }
 
 header {
@@ -26,7 +31,7 @@ header {
   width: 100%;
   top: 0;
   right: 0;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-bottom: 1px solid transparent;
   background: transparent;
   z-index: 1000;
@@ -54,6 +59,9 @@ header.sticky {
     transition: all .45s ease;
 }
 
+span{
+	color: var(--main-color);
+}
 
 section{
     padding: 160px 15% 100px;
@@ -123,5 +131,112 @@ section{
 	}
 	.navbar.open{
 		top: 100%;
+	}
+}
+
+.contact{
+    background: var(--second-bg-color);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    gap: 2.5rem;
+}
+
+.contact-text h2{
+    font-size: var(--h2-font);
+	line-height: 1;
+}
+
+.contact-text h4{
+    color: var(--text-color);
+    margin: 18px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-text p{
+	color: var(--second-color);
+	font-size: var(--p-font);
+	line-height: 1.8;
+	margin-bottom: 30px;
+}
+
+.contact-icons i:hover{
+	background: var(--text-color);
+	color: var(--main-color);
+}
+
+.contact-icons i{
+	height: 45px;
+	width: 45px;
+	background: var(--main-color);
+	color: var(--text-color);
+	font-size: 22px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	margin-right: 15px;
+	transition: all .45s ease;
+}
+
+
+.contact-form form{
+    position: relative;
+}
+
+.contact-form form input, form textarea{
+    width: 100%;
+    padding: 14px;
+    background: var(--bg-color);
+	color: var(--text-color);
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.contact-form textarea{
+	resize: none;
+	height: 240px;
+}
+
+.contact-form .submit{
+	display: inline-block;
+	font-size: 16px;
+	background: var(--main-color);
+	color: var(--text-color);
+	width: 160px;
+	transition: all .45s ease;
+}
+.contact-form .submit:hover{
+	transform: scale(1.1);
+	cursor: pointer;
+}
+
+footer {
+	padding: 20px 15%;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	background-image: linear-gradient(var(--bg-color), rgb(90, 76, 66));
+}
+
+@media (max-width: 1100px){
+	:root{
+		--big-font: 4rem;
+	  --h2-font: 2.5rem;
+	  --p-font: 1rem;
+	  transition: .1s;
+	}
+	.home-text h3{
+		font-size: 2.5rem;
+	}
+	.home{
+		height: 87vh;
 	}
 }
