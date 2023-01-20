@@ -410,10 +410,10 @@ footer {
 	background-image: linear-gradient(rgba(0,0,0,255), var(--bg-color));
 }
 .about-img img{
-	max-width: 530px;
 	height: auto;
-	width: 100%;
+	width: auto;
 	border-radius: 8px;
+	float: right;
 }
 .about-text h2{
 	font-size: var(--h2-font);
@@ -479,7 +479,8 @@ footer {
 }
 
 .banner{
-	width: 100%;
+	position: relative;
+	text-align: center;
 }
 
 .home{
@@ -494,3 +495,29 @@ footer {
 	width: 100%;
 	size-adjust: 40%;
 }
+
+.banner h1{
+	position: absolute;
+	top: 15%;
+	left: 15%;
+	font-size: 5rem;
+	font-weight: bold;
+}
+/* tests for absolute position */
+@media (max-width: 768px) {
+	.banner h1{
+		font-size: 4rem;
+	}
+}
+@media (max-width: 644px) {
+	.banner h1{
+		font-size: 3rem;
+	}
+}
+@media (max-width: 454px) {
+	.banner h1{
+		font-size: 2rem;
+	}
+}
+
+
