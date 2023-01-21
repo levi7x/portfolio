@@ -87,3 +87,44 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
     document.body.appendChild(css);
 };
+
+
+
+/* var language = {
+    en: {
+    },
+
+    sk: {
+        welcome: 'Vitajte',
+        welcometxt: 'na mojej portfolio stranke',
+        home: 'Domov',
+        o: 'O mne',
+        pr: 'Moje projekty',
+        c: 'Kontaktujte ma'
+    }
+}
+
+if (window.localStorage['language'] === 'sk'){
+    document.querySelector('#b-txt').textContent = language.sk.welcometxt;
+    document.querySelector('#b-span').textContent = language.sk.welcome;
+    document.querySelector('#nav-home').textContent = language.sk.home;
+    document.querySelector('#nav-about').textContent = language.sk.o;
+    document.querySelector('#nav-prj').textContent = language.sk.pr;
+    document.querySelector('#nav-cnt').textContent = language.sk.c;
+}
+
+const links = document.querySelectorAll('a');
+links.forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        if (link.getAttribute('href') === '#sk') {
+            localStorage.setItem('language', 'sk');
+        } else if (link.getAttribute('href') === '#en') {
+            localStorage.setItem('language', 'en');
+        }
+        location.reload();
+    });
+});
+ */
+
+
